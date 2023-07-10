@@ -1,0 +1,52 @@
+[System]
+Name='uloha7bFis'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=12
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='znecistenie'
+Range=[0 100]
+NumMFs=4
+MF1='ziadne':'trimf',[-33.33 4.441e-16 33.33]
+MF2='male':'trimf',[0 33.33 66.67]
+MF3='stredne':'trimf',[33.33 66.67 100]
+MF4='velke':'trimf',[66.67 100 133.3]
+
+[Input2]
+Name='mnozstvo'
+Range=[0 7]
+NumMFs=3
+MF1='male':'trimf',[-3.5 -8.327e-17 3.5]
+MF2='stredne':'trimf',[0 3.5 7]
+MF3='velke':'trimf',[3.5 7 10.5]
+
+[Output1]
+Name='cas'
+Range=[7.5 67.5]
+NumMFs=4
+MF1='kratky':'trimf',[7.5 15 22.5]
+MF2='stredny':'trimf',[22.5 30 37.5]
+MF3='dlhy':'trimf',[37.5 45 52.5]
+MF4='velmi_dlhy':'trimf',[52.5 60 67.5]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 1, 2 (1) : 1
+3 2, 3 (1) : 1
+4 1, 3 (1) : 1
+4 2, 3 (1) : 1
+4 3, 4 (1) : 1
+3 3, 4 (1) : 1
